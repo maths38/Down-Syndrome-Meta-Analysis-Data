@@ -1,0 +1,131 @@
+====================
+NIPT
+====================
+
+Conditions: None
+P(X|C)                  : [0.1891, 0.2604]
+P(NOT X|C)              : [99.7396, 99.8109]
+P(DOWN|X,C)             : [87.4015, 90.0721]
+P(NOT DOWN|X,C)         : [9.9279, 12.5985]
+P(DOWN|NOT X,C)         : [0.0026, 0.0037]
+P(NOT DOWN|NOT X,C)     : [99.9963, 99.9974]
+Sensitivity             : [98.1994, 98.7931]
+Specificity             : [99.9735, 99.9769]
+
+Conditions: AGE
+P(X|C)                  : [0.5398, 0.9317]
+P(NOT X|C)              : [99.0683, 99.4602]
+P(DOWN|X,C)             : [89.9373, 95.2724]
+P(NOT DOWN|X,C)         : [4.7276, 10.0627]
+P(DOWN|NOT X,C)         : [0.0037, 0.0110]
+P(NOT DOWN|NOT X,C)     : [99.9890, 99.9963]
+Sensitivity             : [97.9708, 99.5697]
+Specificity             : [99.9069, 99.9644]
+
+Conditions: TWIN
+P(X|C)                  : [0.1970, 0.4655]
+P(NOT X|C)              : [99.5345, 99.8030]
+P(DOWN|X,C)             : [72.2513, 80.4924]
+P(NOT DOWN|X,C)         : [19.5076, 27.7487]
+P(DOWN|NOT X,C)         : [0.0078, 0.0139]
+P(NOT DOWN|NOT X,C)     : [99.9861, 99.9922]
+Sensitivity             : [94.1781, 96.1433]
+Specificity             : [99.8761, 99.9551]
+
+Conditions: AGE & TWIN
+P(X|C)                  : [1.0761, 3.3803]
+P(NOT X|C)              : [96.6197, 98.9239]
+P(DOWN|X,C)             : [41.7526, 65.4321]
+P(NOT DOWN|X,C)         : [34.5679, 58.2474]
+P(DOWN|NOT X,C)         : [0.0296, 0.1158]
+P(NOT DOWN|NOT X,C)     : [99.8842, 99.9704]
+Sensitivity             : [89.3617, 96.5817]
+Specificity             : [98.4247, 99.6253]
+
+====================
+COMB
+====================
+
+Conditions: None
+P(X|C)                  : [3.4148, 5.4890]
+P(NOT X|C)              : [94.5110, 96.5852]
+P(DOWN|X,C)             : [2.7247, 4.5268]
+P(NOT DOWN|X,C)         : [95.4732, 97.2753]
+P(DOWN|NOT X,C)         : [0.0348, 0.0500]
+P(NOT DOWN|NOT X,C)     : [99.9500, 99.9652]
+Sensitivity             : [76.4622, 83.2152]
+Specificity             : [94.6501, 96.7332]
+
+Conditions: AGE
+P(X|C)                  : [7.1870, 11.5453]
+P(NOT X|C)              : [88.4547, 92.8130]
+P(DOWN|X,C)             : [3.5297, 7.5799]
+P(NOT DOWN|X,C)         : [92.4201, 96.4703]
+P(DOWN|NOT X,C)         : [0.1002, 0.1892]
+P(NOT DOWN|NOT X,C)     : [99.8108, 99.8998]
+Sensitivity             : [74.0461, 84.1892]
+Specificity             : [88.8006, 93.2318]
+
+Conditions: TWIN
+P(X|C)                  : [12.1059, 26.4463]
+P(NOT X|C)              : [73.5537, 87.8941]
+P(DOWN|X,C)             : [0.4995, 1.4657]
+P(NOT DOWN|X,C)         : [98.5343, 99.5005]
+P(DOWN|NOT X,C)         : [0.0503, 0.1314]
+P(NOT DOWN|NOT X,C)     : [99.8686, 99.9497]
+Sensitivity             : [58.9080, 80.0499]
+Specificity             : [73.6337, 88.0450]
+
+Conditions: AGE & TWIN
+P(X|C)                  : [17.8214, 57.6203]
+P(NOT X|C)              : [42.3797, 82.1786]
+P(DOWN|X,C)             : [1.2494, 3.3379]
+P(NOT DOWN|X,C)         : [96.6621, 98.7506]
+P(DOWN|NOT X,C)         : [0.1187, 0.9518]
+P(NOT DOWN|NOT X,C)     : [99.0482, 99.8813]
+Sensitivity             : [63.5294, 85.9162]
+Specificity             : [42.7300, 82.6533]
+
+====================
+FTSS
+====================
+
+Conditions: None
+P(X|C)                  : [7.6746, 9.3887]
+P(NOT X|C)              : [90.6113, 92.3254]
+P(DOWN|X,C)             : [1.1105, 1.8085]
+P(NOT DOWN|X,C)         : [98.1915, 98.8895]
+P(DOWN|NOT X,C)         : [0.0540, 0.1178]
+P(NOT DOWN|NOT X,C)     : [99.8822, 99.9460]
+Sensitivity             : [46.2428, 77.6183]
+Specificity             : [90.7609, 92.4141]
+
+Conditions: AGE
+P(X|C)                  : [20.4952, 31.9112]
+P(NOT X|C)              : [68.0888, 79.5048]
+P(DOWN|X,C)             : [1.8736, 2.7080]
+P(NOT DOWN|X,C)         : [97.2920, 98.1264]
+P(DOWN|NOT X,C)         : [0.1403, 0.3510]
+P(NOT DOWN|NOT X,C)     : [99.6490, 99.8597]
+Sensitivity             : [71.6492, 77.5797]
+Specificity             : [68.4266, 79.7942]
+
+Conditions: TWIN
+P(X|C)                  : [5.4453, 12.3289]
+P(NOT X|C)              : [87.6711, 94.5547]
+P(DOWN|X,C)             : [0.8463, 2.6760]
+P(NOT DOWN|X,C)         : [97.3240, 99.1537]
+P(DOWN|NOT X,C)         : [0.0517, 0.1937]
+P(NOT DOWN|NOT X,C)     : [99.8063, 99.9483]
+Sensitivity             : [42.8947, 74.8620]
+Specificity             : [87.7974, 94.6901]
+
+Conditions: AGE & TWIN
+P(X|C)                  : [25.4004, 32.1510]
+P(NOT X|C)              : [67.8490, 74.5996]
+P(DOWN|X,C)             : [1.8149, 4.5757]
+P(NOT DOWN|X,C)         : [95.4243, 98.1851]
+P(DOWN|NOT X,C)         : [0.2643, 0.9804]
+P(NOT DOWN|NOT X,C)     : [99.0196, 99.7357]
+Sensitivity             : [63.2113, 73.6515]
+Specificity             : [68.1519, 75.0190]
