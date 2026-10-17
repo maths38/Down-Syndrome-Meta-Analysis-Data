@@ -1,0 +1,305 @@
+# Input code for our program that produced our reported results follows:
+
+DOWN  # Down syndrom confirmed (as Trisomy 21 - 3 copies of chromosome 21)
+NIPT  # NIPT (non-invasive prenatal testing) for Trisomy 21 positive
+FTSS  # First-trimester serum screening positive for PAPP-A and free bhCG
+COMB  # First-trimester combined screening
+AGE   # AGE of 35 years or older
+TWIN  # Twin pregnancy case (two foetuses) 
+
+
+Study 0 Lu2024   
+
+size = 282,911  
+
+P(NIPT) = 457/282,911           # Abstract: 457 positive NIPT for T21 
+P(DOWN | not NIPT) = 5/282,454  # Section 3.3
+P(DOWN | NIPT) = 397/457        # Abstract: PPV of NIPT 86.81%  
+# P(NIPT | DOWN) = 397/402      # Redundant  
+# Abstract: Sensitivity of NIPT 99.25% -> 397/400 
+# this ignores two non-detected terminated and stillbirth pregnancies
+# P(not NIPT | not DOWN) = 282,449/282,509   # Redundant       
+P(AGE) = 23,629/282,911         # Table 1
+P(TWIN) = 5,483/282,911         # Table 1
+P(DOWN | NIPT & AGE) = 0.8553   
+# Abstract: this is inferred from overall T-s, not just for T21
+ 
+
+Study 1 Liu2025    # Their STSS is FTSS! 
+
+size = 140,265     # After exclusions, see Figure 1
+
+P(NIPT) = 198/140,265                # Figure 1, 198 T21
+P(DOWN | not NIPT) = 5/140,067       # Figure 1, 5 false negatives
+P(DOWN | NIPT) = 163/198             # Figure 1, 163 true positives
+# P(NIPT | DOWN) = 163/168           # Redundant
+P(AGE) = 19,612/140,265              # Table 3
+P(TWIN) = 2,282/140,265              # Table 2
+P(NIPT | AGE) = 70/19,612            # Table 3, 198 T21
+P(DOWN | not NIPT & AGE) = 2/19,542  # Table 3, 2 false negatives
+P(DOWN | NIPT & AGE) = 63/70         # Table 3, 63 true positives
+P(FTSS) = 11,301/140,265             # Table 3
+P(DOWN | not FTSS) = 85/128,964      # Table 3
+# P(DOWN | FTSS) = 83/11,301         # Table 3 
+# Redundant, already fixed by NIPT
+P(FTSS | AGE) = 4,003/19,612         # Table 3
+P(DOWN | not FTSS & AGE) = 15/15,609 # Table 3
+# P(DOWN | FTSS & AGE) = 50/4,003    # Table 3 
+# Redundant, already fixed by NIPT
+
+
+Study 2 Zheng2025
+
+size = 10,423
+
+P(NIPT) =  9/10,423                  # Table 2
+P(DOWN | not NIPT) = 1/10,412        # Table 2
+P(DOWN | NIPT) =  5/9                # Table 2
+P(AGE) =  3,647/10,423               # Table 2
+P(NIPT | AGE) =  3/3,647             # Table 2
+P(DOWN & not NIPT & AGE) = 1/100,000 # Table 2, actually 0 
+# zero probabilities need to be replaced with small constants 
+# because the algorithm works with logarithms undefined at 0
+P(DOWN | NIPT & AGE) =  2/3          # Table 2
+
+
+Study 3 Zheng2025
+
+size = 23,136
+
+P(FTSS) =  1,649/23,136               # Table 2
+P(DOWN | not FTSS) = 3/21,487         # Table 2
+P(DOWN | FTSS) =  15/1,649            # Table 2 
+P(AGE) =  299/23,136                  # Table 2
+P(FTSS | AGE) = 58/299                # Table 2
+P(DOWN & not FTSS & AGE) =  1/100,000 # Table 2, actually 0
+# zero probabilities need to be replaced with small constants 
+# because the algorithm works with logarithms undefined at 0
+P(DOWN | FTSS & AGE) = 2/58           # Table 2 
+
+
+Study 4 Sekelska2019
+
+size = 6,939   # All in Table 1, only successful samples
+
+P(NIPT) =  84/6,939           # Table 1
+P(DOWN | not NIPT) = 1/6,855  # Table 1
+P(DOWN | NIPT) = 83/84        # Table 1
+
+
+Study 5 Yuan2023
+
+size = 1,754   # Table 2, these were with initial normal ultrasound
+
+P(NIPT | TWIN) =  4/1,754              # Table 2
+P(DOWN & not NIPT & TWIN) =  1/100,000 # Table 2, actually 0 
+P(DOWN | NIPT & TWIN) = 3/4            # Table 2
+
+
+Study 6 Chibuk2020
+
+size = 371                         
+
+P(NIPT | TWIN) =  61/371           # Table 2
+P(DOWN | not NIPT & TWIN) =  1/310 # Table 2
+P(DOWN | NIPT & TWIN) = 48/61      # Table 2
+
+
+Study 7 Bai2022 
+
+size = 2,671
+
+P(NIPT | TWIN) =  7/2,671              # Table 2
+P(DOWN & not NIPT & TWIN) =  1/100,000 # Table 2, actually 0 
+P(not DOWN & NIPT & TWIN) = 1/100,000  # Table 2, actually 0
+# zero probabilities need to be replaced with small constants 
+# because the algorithm works with logarithms undefined at 0
+P(AGE | NIPT & TWIN) =  3/7            # Based on details Table 3
+
+
+Study 8 Motevasselian2020
+
+size = 356                             # Abstract
+
+P(NIPT | TWIN) =  3/356                # Table 2
+P(DOWN | not NIPT & TWIN) =  1/100,000 # Abstract, actually 0
+P(DOWN | NIPT & TWIN) =  2/3 
+# Tables 2 and 3, one FP, two TP, lost on follow up excluded
+P(AGE | NIPT & TWIN) =  0.6665  
+# Based on details in Tables 2 and 3 it is 2/3, but that would force atoms zero
+P(DOWN | NIPT & TWIN & AGE) = 1/2      # Based on details in Tables 2 and 3
+
+
+Study 9 Lee2013
+
+size = 25,104                
+
+P(AGE) = 785/25,104               # Results section
+P(TWIN) = 302/25,104              # Only twins and not triplets
+P(DOWN) = 24/25,104               # Results section
+P(COMB | DOWN) = 21/24            # Results section
+P(COMB | not AGE) = 1,280/24,319  # Results section
+P(COMB | AGE) = 137/785           # Results section
+
+Study 10 Jakus2023 
+
+size = 6,898                  # Results section
+
+P(COMB) = 239/6,898           # 239 high risk after screening, see Results
+P(DOWN | not COMB) = 4/6,659  # 4 false negatives
+P(DOWN | COMB) = 17/239       # 17 total true positives
+# At the end, the article seems to misreport 17 out of not AGE
+P(AGE) = 1,457/6,898  
+# This is based on risk factor but aligns with AGE
+P(COMB | AGE) = 118/1,457     # Reported in results for high risk group
+P(DOWN | COMB & AGE) = 10/118 # Reported in results for high risk group
+
+
+Study 11 Park2016
+
+size = 1,005
+
+P(COMB | not TWIN) = 74/1,005          # Fig 2
+P(DOWN | not COMB & not TWIN) = 1/931  # Fig 2 
+# There seemed to be an error stating that 931 were normal, see Table 3
+P(DOWN | COMB & not TWIN) = 3/74       # Fig 2
+P(AGE  | not TWIN) = 217/1,005         # Results, Demographics
+P(NOT AGE & DOWN & not TWIN) = 1/100,000  # Table 2
+
+
+Study 12 Li2015
+
+size = 10,277                            # Table 2, Only Trisomy 21
+
+P(COMB | not TWIN) = 277/10,277          # Table 2, Cut off 1:250
+P(DOWN | not COMB & not TWIN) = 5/10,000
+P(DOWN | COMB & not TWIN) = 32/277
+P(AGE | not TWIN) = 2,682/10,277         # Table 6, 2682 age 35 or older
+P(COMB | DOWN & AGE & not TWIN) = 0.8571 # Table 3, Sensitivity
+P(DOWN | COMB & AGE & not TWIN) = 0.1111 # Table 3 PPV
+P(DOWN | not COMB & AGE & not TWIN) = 0.0012        # Table 3 1-NPV
+# P(not COMB | not DOWN & AGE & not TWIN) = 0.9457  # Table 3, redundant
+
+
+Study 13 Yang2022
+
+size = 474                        
+
+P(NIPT | TWIN) =  5/474            # Figure 1
+P(DOWN | not NIPT & TWIN) =  1/100,000  # Table 2, actually 0
+P(DOWN | NIPT & TWIN) =  4/5       # Figure 1   
+P(AGE | NIPT & TWIN) =  0.5999     # Table 3, 3/5 forces some atoms zero
+# P(NIPT | TWIN & AGE) = 3/73      # Redundant
+P(DOWN | NIPT & TWIN & AGE) = 2/3  # Table 3
+P(AGE | TWIN) = 73/474             # Table 1
+
+
+Study 14 Chen2022
+
+size = 6,471
+
+P(NIPT | TWIN) =  20/6,471               # Table 1
+P(DOWN | not NIPT & TWIN) =  1/100,000   # Actually 0
+P(DOWN | NIPT & TWIN) =  18/20           # Table 1
+P(AGE) = 0.2432                          # Results 
+
+
+Study 15 Chen2022 
+
+size = 14,574     # High risk here is different to Age 35 or older
+
+P(NIPT | not TWIN) =  48/14,574            # Table 2
+P(DOWN | not NIPT & not TWIN) =  1/14,526  # Table 2
+P(DOWN | NIPT & not TWIN) =  45/48         # Table 2
+
+Study 16 Claudel2024
+
+size = 1,747  # Table 2
+ 
+P(NIPT | TWIN) =  10/1,747                # Table 2 and Figure 1
+P(DOWN | not NIPT & TWIN) =  1/100,000    # Table 2, actually 0
+P(DOWN | NIPT & TWIN) =  6/10             # Table 2
+
+
+Study 17 Simionescu2020
+
+size = 5,114    # only comb
+
+P(DOWN | not COMB & not TWIN) = 7/5,114       # Table 1, they mean false negative cases
+P(AGE | not COMB & DOWN & not TWIN) = 3/7     # Table 1
+
+
+Study 18 Wongkrajang2023
+
+size = 1,778
+
+P(NIPT | not TWIN) =  16/1,778             # Table 1
+P(DOWN & not NIPT & not TWIN) =  1/100,000 # Table 1, actually 0
+P(not DOWN & NIPT & not TWIN) = 1/100,000  # Table 1, actually 0
+# zero probabilities need to be replaced with small constants 
+# because the algorithm works with logarithms undefined at 0
+
+
+Study 19 Wongkrajang2023
+
+size = 5,070
+
+P(COMB | not TWIN) =  200/5,070          # Table 1
+P(DOWN | not COMB & not TWIN) =  2/4,870 # Table 1
+P(DOWN | COMB & not TWIN) = 5/200        # Table 1 
+
+
+Study 20 Bogaert2021  
+
+size = 152,500   # 99.3% of 153,575 NIPT tests successful
+
+P(NIPT) = 494/152,500          # Results, 494 NIPT positive
+P(DOWN | not NIPT) = 4/152,006 # Results, 4 false negative
+P(DOWN | NIPT) = 364/394       # Results, confirmation by invasive testing
+P(TWIN) = 2,770/153,575
+
+
+Study 21 Bogaert2021
+
+size = 2,770
+
+P(NIPT | TWIN) = 11/2,770              # Results
+P(NIPT & not DOWN & TWIN) = 1/100,000  # Results, no FP claimed, actually 0
+P(DOWN & not NIPT & TWIN) = 1/100,000  # Actually 0, no FP claimed
+# zero probabilities need to be replaced with small constants 
+# because the algorithm works with logarithms undefined at 0
+
+
+Study 22 Khalil2021
+
+size = 958      # 3 failed are excluded
+
+P(NIPT | TWIN) = 13/958         # Table 3
+P(DOWN & not NIPT) = 1/100,000  # Table 3, actually 0
+P(not DOWN & NIPT) = 1/100,000  # Table 3, actually 0
+# zero probabilities need to be replaced with small constants 
+# because the algorithm works with logarithms undefined at 0
+P(AGE | TWIN) = 560/958         # Table 2
+
+
+Study 23 Claudel2024
+
+size = 3,877  # Table 2
+ 
+P(NIPT | not TWIN) =  61/3,877          # Table 2, reconstructed for FDR and PPV
+P(DOWN | not NIPT & not TWIN) = 1/3,816 # Table 2, reconstructed from sensitivity
+P(DOWN | NIPT & not TWIN) =  54/61      # Table 2, reconstructed for FDR and PPV
+
+
+Study 24 Gil2019
+
+size = 998   # Table 2
+
+P(NIPT | TWIN) = 17/998 # Table 2
+P(DOWN | not NIPT & TWIN) =  1/981 # Table 2
+P(DOWN | NIPT & TWIN) =  16/17 # Table 2
+
+
+gtol = 1e-11      # Program accuracy parameter (default 1e-12)
+stopping = 1e-8   # We can override stopping parameter (default 1e-6)
+maxiter = 2000    # Program accuracy parameter (default 1000)
