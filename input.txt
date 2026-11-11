@@ -1,4 +1,4 @@
-# Input code for our program that produced our reported results follows:
+# The input code for our program that produced the results:
 
 DOWN  # Down syndrom confirmed (as Trisomy 21 - 3 copies of chromosome 21)
 NIPT  # NIPT (non-invasive prenatal testing) for Trisomy 21 positive
