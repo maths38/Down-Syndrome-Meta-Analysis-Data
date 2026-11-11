@@ -10,4 +10,4 @@ More details are specified in the preprint paper.
 The preprint paper, code, and input/output files in this repository are licensed under **CC-BY 4.0**. To view a copy of this license, visit https://creativecommons.org/licenses/by/4.0/ 
 
 ## Note
-The main package/program in the other folders is distributed under its own different license.
+The main package/program in the other folders is distributed under the GNU General Public License.
