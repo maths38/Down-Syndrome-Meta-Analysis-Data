@@ -1,4 +1,4 @@
-# The input code for the paper Evaluation of a Method for Meta-Analysis of Studies with Complex Knowledge and Unexplained Heterogeneity: A Case Study of Down Syndrome Screening
+# The input code for the paper Implementation and Evaluation of a Method for Meta-Analysis of Studies with Complex Knowledge and Unexplained Heterogeneity: A Case Study of Down Syndrome Screening
 Copyright (C) 2026 Martin Adamčík, e-mail: maths38@gmail.com  
 
 The input code in the input.txt is to be run on the meta-analysis python package/program available either here on GitHub or on PyPI.
