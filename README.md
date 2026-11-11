@@ -7,7 +7,7 @@ After running the program 25 times, each time removing one study, we obtain outp
 More details are specified in the (preprint) paper. 
 
 ## Licensing
-The code, and input/output files in this repository are licensed under **CC-BY 4.0**. To view a copy of this license, visit https://creativecommons.org/licenses/by/4.0/. 
+The (preprint) paper, the code, and input/output files in this repository are licensed under **CC-BY 4.0**. To view a copy of this license, visit https://creativecommons.org/licenses/by/4.0/. 
 
 ## Note
 The main package/program in the other folders is distributed under the GNU General Public License.
