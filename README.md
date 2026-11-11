@@ -3,7 +3,7 @@ Copyright (C) 2026 Martin Adamčík, e-mail: maths38@gmail.com
 
 The input code in the input.txt is to be run on the meta-analysis python package/program available either on GitHub https://github.com/maths38 or on PyPI https://pypi.org/project/meta-analysis/.
 The code interpretation.py interprets probabilities obtained by the program in output.txt, and which are copied into probabilities.txt.
-After running the program 25 times, each time removing one study, the range of interpreted values is specified in reliability.txt.
+After running the program 25 times, each time removing one study, we obtain outputs and probabilities specified in the Reliability folder. The code reliability.py specifies the range of interpreted values in reliability.txt.
 More details are specified in the (preprint) paper. 
 
 ## Licensing
